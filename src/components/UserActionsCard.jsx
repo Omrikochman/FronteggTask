@@ -62,7 +62,7 @@ export const UserActionsCard = () => {
               onChange={(e) => switchToTenant(e.target.value)}
             >
               {user?.tenantIds.map((id) => (
-                <MenuItem value={id}>{id}</MenuItem>
+                <MenuItem key={id} value={id}>{id}</MenuItem>
               ))}
             </Select>
           </FormControl>
