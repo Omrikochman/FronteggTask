@@ -22,9 +22,8 @@ export const UserActionsCard = () => {
   const { switchTenant } = useAuthActions();
 
   const logout = () => {
-    const baseUrl = ContextHolder.getContext().baseUrl;
-    window.location.href = `${baseUrl}/oauth/logout?post_logout_redirect_uri=${window.location}`;
-  };
+    window.location.replace("http://localhost:3000/account/logout");
+  };
 
   const showPortal = () => {
     AdminPortal.show();

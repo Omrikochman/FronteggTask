@@ -1,11 +1,7 @@
 import React from "react";
-import { useLoginWithRedirect } from "@frontegg/react";
 import { Button } from "@mui/material";
 
-
 export const Login = () => {
-  const loginWithRedirect = useLoginWithRedirect();
-
 
   return (
     <div
@@ -17,10 +13,9 @@ export const Login = () => {
         
       }}
     >
-      <Button variant="contained" onClick={loginWithRedirect}>
+      <Button variant="contained" onClick={() => window.location.replace("http://localhost:3000/account/login")}>
         Redirect to login
       </Button>
-    </div>
-  );
+    </div>
+  );
 };
-

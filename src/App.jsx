@@ -1,25 +1,21 @@
 import "./App.css";
 import { FronteggProvider } from "@frontegg/react";
 import { Home } from "./components/Home";
+import { createBrowserHistory } from "history";
 
 const contextOptions = {
-  baseUrl: "https://app-7opfi0wtc3th.frontegg.com",
-  clientId: "61e663d8-b06c-4f79-bff6-afa00be1a449",
-  appId: "e5dfae6f-ba4a-437a-b71b-f931e1fff78c",
+  baseUrl: 'https://app-7opfi0wtc3th.frontegg.com',
 };
 
-const authOptions = {
-  // keepSessionAlive: true // Uncomment this in order to maintain the session alive
-};
+const history = createBrowserHistory();
 
 export const App = () => {
+
+  const headerImage = 'https://assets.frontegg.com/public-frontegg-assets/acme-logo.svg';
+
   return (
-    <FronteggProvider
-      contextOptions={contextOptions}
-      hostedLoginBox={true}
-      authOptions={authOptions}
-    >
-      <Home />
-    </FronteggProvider>
-  );
+    <FronteggProvider history={history} contextOptions={contextOptions} headerImage={headerImage}>
+    <Home />
+  </FronteggProvider>
+  );
 };
